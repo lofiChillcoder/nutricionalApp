@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="650.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="nutricionalappfx.controlador.FXMLPrincipalController">
+   <children>
+      <Label fx:id="lblNombre" layoutX="33.0" layoutY="35.0" text="Label" />
+      <Label fx:id="lblRol" layoutX="33.0" layoutY="86.0" text="Label" />
+   </children>
+</AnchorPane>
