@@ -3,6 +3,7 @@ package nutricionalappfx.controlador;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -34,10 +35,35 @@ public class FXMLPrincipalController implements Initializable {
     }
     
     private void mostrarInfoPantalla(){
-        //no aparece, corregir los set
+        
         if(colaborador != null){
             lblNombre.setText("Bienvenido(a) " + colaborador.toString());
             lblRol.setText("Rol: " + colaborador.getRol());
+            
         }
+    }
+
+    @FXML
+    private void handlerCerrarSesion(ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerIrAdminColaboradores(ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerIrAdminPacientes(ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerIrAdminCitas(ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerIrAdminDietas(ActionEvent event) {
+    }
+
+    @FXML
+    private void handlerIrConsultas(ActionEvent event) {
     }
 }

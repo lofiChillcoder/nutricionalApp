@@ -1,12 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="650.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="nutricionalappfx.controlador.FXMLPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #F8FAFC;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nutricionalappfx.controlador.FXMLPrincipalController">
    <children>
-      <Label fx:id="lblNombre" layoutX="33.0" layoutY="35.0" text="Label" />
-      <Label fx:id="lblRol" layoutX="33.0" layoutY="86.0" text="Label" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #064E3B;" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="40.0" right="40.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" spacing="6.0">
+                     <children>
+                        <Label fx:id="lblNombre" text="Bienvenido Usuario" textFill="#fcf7f7">
+                           <font>
+                              <Font name="Segoe UI Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblRol" style="-fx-background-color: #10B981; -fx-background-radius: 12; -fx-label-padding: 3 12 3 12;" text="Rol: EjemploRol" textFill="#faf5f5" />
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="200.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Pane>
+                  <Button mnemonicParsing="false" onAction="#handlerCerrarSesion" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20; -fx-cursor: hand;" text="Cerrar sesión" textFill="#fffdfd">
+                     <font>
+                        <Font name="Segoe UI" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="6.0" left="16.0" right="16.0" top="6.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../recurso/cerrar%20sesion.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="50.0" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handlerIrAdminColaboradores" prefHeight="160.0" prefWidth="240.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #E2E8F0; -fx-border-radius: 16; -fx-cursor: hand;" text="Administrador de colaboradores" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handlerIrAdminPacientes" prefHeight="160.0" prefWidth="240.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #E2E8F0; -fx-border-radius: 16; -fx-cursor: hand;" text="Administrador de pacientes" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handlerIrAdminCitas" prefHeight="160.0" prefWidth="240.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #E2E8F0; -fx-border-radius: 16; -fx-cursor: hand;" text="Administrador de citas" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handlerIrAdminDietas" prefHeight="160.0" prefWidth="240.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #E2E8F0; -fx-border-radius: 16; -fx-cursor: hand;" text="Administrador de dietas" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handlerIrConsultas" prefHeight="160.0" prefWidth="240.0" style="-fx-background-color: white; -fx-background-radius: 16; -fx-border-color: #E2E8F0; -fx-border-radius: 16; -fx-cursor: hand;" text="Consultas" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <effect>
+                  <DropShadow offsetY="3.0">
+                     <color>
+                        <Color red="0.8736842274665833" green="0.8736842274665833" blue="0.8736842274665833" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </VBox>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
