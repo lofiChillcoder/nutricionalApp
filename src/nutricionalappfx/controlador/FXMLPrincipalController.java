@@ -62,7 +62,8 @@ public class FXMLPrincipalController implements Initializable {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/nutricionalappfx/vista/FXMLAdminPaciente.fxml"));
             Parent vista = loader.load();
-
+            FXMLAdminPacienteController controlador = loader.getController();
+            controlador.recibirInformacion(colaborador.getIdColaborador());
             Scene escena = new Scene(vista);
             Stage stagePacientes = new Stage();
             stagePacientes.setScene(escena);

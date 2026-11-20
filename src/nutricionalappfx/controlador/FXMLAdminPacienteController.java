@@ -25,6 +25,8 @@ import javafx.stage.Stage;
  * @author Angel
  */
 public class FXMLAdminPacienteController implements Initializable {
+    
+    private int idNutriologo;
 
     @FXML
     private TextField txtBuscarPaciente;
@@ -69,7 +71,7 @@ public class FXMLAdminPacienteController implements Initializable {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/nutricionalappfx/vista/FXMLFormularioPaciente.fxml"));
             Parent vista = loader.load();
-
+            
             Scene escena = new Scene(vista);
             Stage stagePacientes = new Stage();
             stagePacientes.setScene(escena);
@@ -91,4 +93,7 @@ public class FXMLAdminPacienteController implements Initializable {
         stagePacientes.close();
     }
     
+    public void recibirInformacion(int idNutriologo){
+        this.idNutriologo = idNutriologo;
+    }
 }
