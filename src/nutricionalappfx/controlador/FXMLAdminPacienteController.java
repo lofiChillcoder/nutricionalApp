@@ -16,8 +16,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import nutricionalappfx.dominio.pojo.Paciente;
 
 /**
  * FXML Controller class
@@ -28,45 +30,48 @@ public class FXMLAdminPacienteController implements Initializable {
     
     private int idNutriologo;
 
-    @FXML
     private TextField txtBuscarPaciente;
     @FXML
-    private TableView<?> tblRegistrosPacientes;
+    private TextField tfBuscarPaciente;
     @FXML
-    private TableColumn<?, ?> colCodPaciente;
+    private TableView<Paciente> tvPacientes;
     @FXML
-    private TableColumn<?, ?> colNombrePaciente;
+    private TableColumn colCodigo;
     @FXML
-    private TableColumn<?, ?> colApellidoPaternoPaciente;
+    private TableColumn colNombre;
     @FXML
-    private TableColumn<?, ?> colApellidoMaternoPaciente;
+    private TableColumn colApPaterno;
     @FXML
-    private TableColumn<?, ?> colFechaNacimientoPaciente;
+    private TableColumn colApMaterno;
     @FXML
-    private TableColumn<?, ?> colTelefonoPaciente;
+    private TableColumn colFechaNacimiento;
     @FXML
-    private TableColumn<?, ?> colSexoPaciente;
-    @FXML
-    private TableColumn<?, ?> colAlturaPaciente;
-    @FXML
-    private TableColumn<?, ?> colPesoInicialPaciente;
-    @FXML
-    private TableColumn<?, ?> colCorreoPaciente;
+    private TableColumn colPeso;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        configurarColumnasTabla();
+        //tvPacientes.setItems(value);
     }    
+    
+    private void configurarColumnasTabla(){
+        colCodigo.setCellValueFactory(new PropertyValueFactory("codigo"));
+        colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+        colApPaterno.setCellValueFactory(new PropertyValueFactory("apellidoPaterno"));
+        colApMaterno.setCellValueFactory(new PropertyValueFactory("apellidoMaterno"));
+        colFechaNacimiento.setCellValueFactory(new PropertyValueFactory("fechaNacimiento"));
+        colPeso.setCellValueFactory(new PropertyValueFactory("pesoInicial"));
+        
+    }
 
     @FXML
     private void handlerBuscarPaciente(ActionEvent event) {
         
     }
 
-    @FXML
     private void handlerIrFormularioAltaPaciente(ActionEvent event) {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/nutricionalappfx/vista/FXMLFormularioPaciente.fxml"));
@@ -84,10 +89,6 @@ public class FXMLAdminPacienteController implements Initializable {
     }
 
     @FXML
-    private void handlerIrFormularioEditarPaciente(ActionEvent event) {
-    }
-
-    @FXML
     private void handlerRegresarAPrincipal(ActionEvent event) {
         Stage stagePacientes = (Stage) txtBuscarPaciente.getScene().getWindow();
         stagePacientes.close();
@@ -95,5 +96,17 @@ public class FXMLAdminPacienteController implements Initializable {
     
     public void recibirInformacion(int idNutriologo){
         this.idNutriologo = idNutriologo;
+    }
+
+    @FXML
+    private void handleBtnRegistrar(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleBtnEditar(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleBtnEliminar(ActionEvent event) {
     }
 }
